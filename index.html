@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in and sign up</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://kit.fontawesome.com/63a597e766.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <p>Forgot Password?  <a href="#">Click Here!!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signup">Sign up</button>
+                    <button type="button" class="disable" id="signin">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script>
+    let nameField=document.getElementById('nameField');
+    let title=document.getElementById('title');
+    let signup=document.getElementById('signup');
+    let signin=document.getElementById('signin');
+    signin.onclick=function() {
+        nameField.style.maxHeight="0";
+        title.innerHTML="Sign In";
+        signup.classList.add('disable');
+        signin.classList.remove('disable');
+    }
+    signup.onclick=function() {
+        nameField.style.maxHeight="60px";
+        title.innerHTML="Sign Up";
+        signup.classList.remove('disable');
+        signin.classList.add('disable');
+    }
+</script>
+</body>
+</html>
